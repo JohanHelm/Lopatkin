@@ -1,6 +1,6 @@
 import os
-
 import dotenv
+
 from aiogram import Bot, Dispatcher
 
 from handlers.register import register_common

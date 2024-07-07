@@ -1,16 +1,19 @@
+import os
+import dotenv
+
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+
+dotenv.load_dotenv("secrets/.env")
 
 url_button = InlineKeyboardButton(
     text='Ленина 1.',
     url='https://yandex.ru/maps/67/tomsk/?ll=84.951979%2C56.455644&z=19'
 )
 
-pay_link = "https://yoomoney.ru/quickpay/confirm.xml?&receiver=4100116731104688&quickpay-form=donate" \
-           "&targets=TZ_check&paymentType=AC&sum=2.062"
-
 pay_button = InlineKeyboardButton(
     text='C Вас 2 рубля',
-    url=pay_link
+    url=os.getenv('PAY_LINK')
 )
 
 pic_button = InlineKeyboardButton(
