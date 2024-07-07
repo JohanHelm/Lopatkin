@@ -1,0 +1,17 @@
+[Unit]
+Description=Lopatkin TZ
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+
+User=root
+Group=root
+
+WorkingDirectory=/root/lopatkin
+ExecStart=/root/lopatkin/venv/bin/python main.py
+Restart=always
+
+[Install]
+WantedBy=default.target
